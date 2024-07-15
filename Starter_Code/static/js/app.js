@@ -1,7 +1,7 @@
 // Build the metadata panel
 function buildMetadata(sample) {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
-
+    console.log(`Data: ${data}`);
     // get the metadata field
     let metadata = data.metadata;
 
@@ -25,7 +25,7 @@ function buildMetadata(sample) {
 // function to build both charts
 function buildCharts(sample) {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
-
+    console.log(`Data: ${data}`);
     // Get the samples field
     let samples = data.samples;
 
@@ -52,7 +52,8 @@ function buildCharts(sample) {
     let bubbleLayout={
       title: 'Bacteria Cultures Per Sample',
       showLegend: false,
-      xaxis: {title: 'OTU ID'}
+      xaxis: {title: 'OTU ID'},
+      yaxis: {title: 'Number of Bacteria'}
     };
 
     // Render the Bubble Chart
@@ -68,7 +69,8 @@ function buildCharts(sample) {
       orientation: 'h'
     }];
     let barLayout={
-      title: "Top 10 Bacteria Cultures Found"
+      title: "Top 10 Bacteria Cultures Found",
+      xaxis: {title: "Number of Bacteria"}
     };
     // Build a Bar Chart
     // Don't forget to slice and reverse the input data appropriately
@@ -82,7 +84,7 @@ function buildCharts(sample) {
 // Function to run on page load
 function init() {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
-
+    console.log(`Data: ${data}`);
     // Get the names field
     let names=data.names;
 
