@@ -56,6 +56,7 @@ function buildCharts(sample) {
       yaxis: {title: 'Number of Bacteria'}
     };
 
+    
     // Render the Bubble Chart
     Plotly.newPlot('bubble', trace, bubbleLayout);
 
